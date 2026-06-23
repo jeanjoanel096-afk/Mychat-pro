@@ -4,18 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 pb-20">
+<body class="bg-gray-100 pb-24">
 
-    <div class="bg-[#4f46e5] text-white p-6 rounded-b-[40px] shadow-lg">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-2xl font-bold">Dashboard</h1>
-            <button>🔔</button>
+    <div class="bg-[#4f46e5] text-white p-6 rounded-b-3xl shadow-lg">
+        <div class="flex justify-between mb-6">
+            <h1 class="text-xl font-bold">Dashboard</h1>
+            <span>🔔</span>
         </div>
-        <div class="bg-white/10 p-4 rounded-2xl flex items-center space-x-4">
-            <div class="w-14 h-14 bg-gray-300 rounded-full"></div>
+        <div class="bg-white/20 p-4 rounded-2xl flex items-center">
+            <div class="w-12 h-12 bg-white rounded-full mr-4"></div>
             <div>
-                <p class="font-bold">John Doe</p>
-                <p class="text-xs">Nivo 1 | Balans: <span class="text-yellow-400 font-bold">$125.50</span></p>
+                <p class="font-bold">{{ user.username }}</p>
+                <p class="text-sm">Nivo {{ user.level }} | Balans: <span class="text-yellow-300">${{ user.balance }}</span></p>
             </div>
         </div>
     </div>
@@ -24,17 +24,24 @@
         <h2 class="font-bold text-gray-800 mb-4">GAME ZÒN</h2>
         <div class="grid grid-cols-2 gap-4">
             <div class="bg-white p-4 rounded-2xl shadow text-center">
-                <div class="h-24 bg-purple-200 rounded-xl mb-2"></div>
-                <button class="w-full bg-[#4f46e5] text-white py-2 rounded-lg">JWE KOUNYA</button>
+                <div class="h-20 bg-purple-100 rounded-xl mb-2"></div>
+                <button class="w-full bg-[#4f46e5] text-white py-2 rounded-lg text-sm">BLOCK PUZZLE</button>
             </div>
             <div class="bg-white p-4 rounded-2xl shadow text-center">
-                <div class="h-24 bg-orange-200 rounded-xl mb-2"></div>
-                <button class="w-full bg-[#4f46e5] text-white py-2 rounded-lg">JWE KOUNYA</button>
+                <div class="h-20 bg-orange-100 rounded-xl mb-2"></div>
+                <button class="w-full bg-[#4f46e5] text-white py-2 rounded-lg text-sm">MOTO GAME</button>
             </div>
         </div>
     </div>
 
-    <div class="fixed bottom-0 w-full bg-white p-4 flex justify-around border-t">
+    <div class="px-6 grid grid-cols-4 gap-2 text-center text-xs">
+        <button class="bg-white p-2 rounded-xl shadow">💰<br>Balans</button>
+        <button class="bg-white p-2 rounded-xl shadow">📤<br>Retire</button>
+        <button class="bg-white p-2 rounded-xl shadow">💬<br>Chat</button>
+        <button class="bg-white p-2 rounded-xl shadow">❓<br>Èd</button>
+    </div>
+
+    <div class="fixed bottom-0 w-full bg-white p-4 flex justify-around border-t shadow-lg">
         <button class="text-[#4f46e5] font-bold">🏠 Home</button>
         <button class="text-gray-500">💬 Chat</button>
         <button class="text-gray-500">👤 Profile</button>
