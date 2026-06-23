@@ -1,4 +1,22 @@
-from flask import Flask, render_template, request, jsonify, session
+import os
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Pwofil itilizatè a
+user_data = {
+    "username": "John Doe",
+    "level": 1,
+    "balance": 0.00
+}
+
+@app.route('/')
+def index():
+    return render_template('index.html', user=user_data)
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)from flask import Flask, render_template, request, jsonify, session
 from flask_socketio import SocketIO, emit, join_room
 import firebase_admin
 from firebase_admin import credentials, firestore, auth
