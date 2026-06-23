@@ -55,10 +55,14 @@ def withdraw():
     db.collection('withdrawals').add({
         'uid': uid,
         'amount': amount,
-        'status': 'pending',
+        'status': 'pending',@app.route('/chat')
+def chat():
+    return render_template('chat.html')
         'method': 'MonCash'
     })
-    return jsonify({"status": "demann voye"})@app.route('/signup')
+    return jsonify({"status": "demann voye"})@app.route('/signup')@app.route('/profile')
+def profile():
+    return render_template('profile.html')
 def signup():
     return render_template('signup.html')
 
