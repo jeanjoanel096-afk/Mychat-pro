@@ -58,7 +58,9 @@ def withdraw():
         'status': 'pending',
         'method': 'MonCash'
     })
-    return jsonify({"status": "demann voye"})
+    return jsonify({"status": "demann voye"})@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
